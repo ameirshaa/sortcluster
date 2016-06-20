@@ -26,14 +26,6 @@ for cluster in typesofcluster:
 	imgFilePath = 'clustertypes_thresholded/'+str(cluster)+'.'+str(1)+'.bmp' #where we have saved the predetermined perfect images #save files accordingly
 	ei = Image.open(imgFilePath) #opening the image
 	eiar = np.array(ei) #making the array
-	if cluster == 1:
-		print 'we are now printing the brancher'
-	elif cluster == 2:
-		print 'we are now printing the crossover'
-	elif cluster == 3:
-		print 'we are now printing the looper'
-	elif cluster == 4:
-		print 'we are now printing the slug'
 	eiar1 = str(eiar.tolist()) #saving to database.txt
 	'''
 earlier we had set cluster to be in range(5). in order to convert the integers into strings we 
@@ -42,15 +34,19 @@ matches each number to the various clusters we had saved as images earlier.
 '''
 
 	if cluster == 1: 
+		print 'we are now printing the brancher'
 		lineToWrite = 'brancher'+'::'+eiar1+'\n'   
 		clusterarray.write(lineToWrite)
 	elif cluster == 2:
+		print 'we are now printing the crossover'
 		lineToWrite = 'crossover'+'::'+eiar1+'\n'
 		clusterarray.write(lineToWrite)
 	elif cluster == 3:
+		print 'we are now printing the looper'
 		lineToWrite = 'looper'+'::'+eiar1+'\n'
 		clusterarray.write(lineToWrite)
 	elif cluster == 4:
+		print 'we are now printing the slug'
 		lineToWrite = 'slug'+'::'+eiar1+'\n'
 		clusterarray.write(lineToWrite)
 	#elif cluster == 5:
@@ -59,3 +55,4 @@ matches each number to the various clusters we had saved as images earlier.
 	else:
 		continue
 		
+
